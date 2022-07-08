@@ -63,6 +63,17 @@ code[class*="language-"],
     word-wrap: break-word;
 }
 
+.logoFont{
+    font-family: 'Racing Sans One', cursive;
+    font-size: medium;
+    padding-top: 11px;
+}
+
+.logoFont2{
+    font-family: "Racing Sans One", cursive;
+    font-size: 40px;
+}
+
 main>.container {
     padding: 60px 15px 0;
     margin-bottom: 5rem;
