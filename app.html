@@ -56,31 +56,42 @@
     </nav>
     <!-- ==== Main Section ====-->
     <main class="flex-shrink-0">
-        <div class="container">
+        <div class="container MT-5">
             <div class="row row-cols-1 row-cols-lg-2 pt-3">
-                <div class="col-4">
+                <div class="col col-lg-4 border-end border-2">
                     <h1>100 MAX: A Coding Project</h1>
                     <h4 class="lead">
                         Live life one loop at a time. A javascript coding exercise using loops. Write a
-                        program that displays the numbers from 0 to 100. Displays the even numbers in <strong>BOLD.</strong>
+                        program that displays the numbers from 0 to 100. Displays the even numbers in
+                        <strong>BOLD.</strong>
                     </h4>
                     <h2 class="mt-5 border-bottom border-2">Instructions</h2>
                     <p>Enter a starting value and ending value. Press the button and the values will appear.</p>
                 </div>
-                <div class="col-8">
+                <div class="col col-lg-8 ">
                     <div>
                         <h5>Enter Values</h5>
                         <form class="row gy-2 gx-3">
                             <div class="col">
-                                <input id="startValue" type="number" class="form-control" placeholder="Start Value" value=0 aria-label="Start Value">
+                                <input id="startValue" type="number" class="form-control" placeholder="Start Value"
+                                    value=0 aria-label="Start Value">
                             </div>
                             <div class="col">
-                                <input id="endValue" type="number" class="form-control" placeholder="End Value" value=100 aria-label="End Value">
+                                <input id="endValue" type="number" class="form-control" placeholder="End Value"
+                                    value=100 aria-label="End Value">
                             </div>
-                            <div class="col">
-
+                            <div class="col-12 d-flex justify-content-end">
+                                <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Display Your Values</button>
                             </div>
                         </form>
+                        <h2 class="border-bottom border-2 mt-5">Results</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                                <tbody id="results">
+                                    <!--Results Go Here-->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,10 +123,11 @@
             </div>
         </div>
     </footer>
-     <!-- Bootstrap JS -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
- </script>
- <script src="js/site.js"></script>
-    </body>
-    </html>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script src="js/site.js"></script>
+</body>
+
+</html>
