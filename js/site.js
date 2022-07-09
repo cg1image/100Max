@@ -5,9 +5,12 @@
 //starts or controller function
 function getValues(){
     //get values from the page
-    let startValue = document.getElementById("startValue")
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
 
-
+    alert("The Start Value: " + startValue);
+    
+    
     //we need to call generateNumbers
 
     //we call displayNumbers
