@@ -6,6 +6,10 @@
     --white-color: #e5d9b6;
 }
 
+.border-line{
+    padding: 5px;
+}
+
 .odd{
     font-weight: 100;
 }

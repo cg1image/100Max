@@ -12,7 +12,7 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
-    
+
     <link href="/css/site.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/img/Cg1Mark-32x32.png">
     <link href="/css/prism.css" rel="stylesheet">
@@ -59,26 +59,112 @@
     <main class="flex-shrink-0">
         <div class="container py-5 px-5">
             <h2 class="border-1 border-bottom border-dark logoFont2 pt-5">The Code for 100 MAX.</h2>
-            <div class="row row-cols-1 row-cols-lg-2">
+            <div class="row row-cols-1 row-cols-lg-2 ">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //starts or controller function
-function getValues(){
-    //get values from the page
+                    
+                    function getValues()
+
     let startValue = document.getElementById("startValue")
-
-
-    //we need to call generateNumbers
-
-    //we call displayNumbers
 }
                     </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Cod is structured in one function.</p>
+                    <p>--The Code is structured in several functions--</p>
                     <h5>getValues</h5>
-                    <p>getValues is a function that gets the starting values from the DOM</p>
+                    <p>getValues is a function that gets the starting values from the DOM.</p>
+                </div>
+                <div class="col-lg-8 ">
+                    <pre class="line-numbers"><code class="language-javascript">
+                    
+                        if (Number.isInteger(startValue) && Number.isInteger(endValue)){   
+                        
+                        let numbers = generateNumbers(startValue,endValue);
+                         
+                        displayNumbers(numbers);
+                    
+                        } else{
+                            alert("You must enter integers");
+                        }
+                    
+                    }
+                    </code>
+                    </pre>
+                </div>
+                <div class="col-lg-4">
+                    <p>--Boolean verification true/false--</p>
+                    <h5>if statement</h5>
+                    <p>Number.isInteger is used to verify true/false scenario in order to proceed with the execution or
+                        alert "You must enter integers".</p>
+                </div>
+                <div class="col-lg-8 ">
+                    <pre class="line-numbers"><code class="language-javascript">
+                    
+                        function generateNumbers(sValue,eValue){
+
+                            let numbers = [];
+                                              
+                            for (let index = sValue; index <= eValue; index++) {    
+                                
+                                numbers.push(index);
+                            }
+                        
+                            return numbers;
+                        }
+                    </code>
+                    </pre>
+                </div>
+                <div class="col-lg-4">
+                    <p>--Logic function Arrays and loops--</p>
+                    <h5>generateNumbers</h5>
+                    <p>generateNumbers is a function that generates the values between start and end value.</p>
+                    <h5>for loop</h5>
+                    <p>The for loop will execute the start value in a loop until index = end value and create an array
+                        of those integers to display on the DOM.</p>
+                </div>
+                <div class="col-lg-8 ">
+                    <pre class="line-numbers"><code class="language-javascript">
+                        //dispay the numbers and mark even numbers bold
+                        //display or view functions
+                        function displayNumbers(numbers){
+                        
+                        let templateRows = "";
+                        
+                        for (let index = 0; index < numbers.length; index++) {
+                            
+                            let className = "even";
+                            let number = numbers[index];
+                        
+                            if (number % 2 ==0) {
+                                className="even";
+                        
+                            }
+                            else{
+                                className="odd";
+                            }
+                        
+                            templateRows += `<tr><td class="${className}" >${number}</td></tr>`;
+                        }
+                        
+                            document.getElementById("results").innerHTML = templateRows;
+                        
+                        
+                        }
+                    </code>
+                    </pre>
+                </div>
+                <div class="col-lg-4">
+                    <p>--Display or view function results to the DOM--</p>
+                    <h5>displayNumbers</h5>
+                    <p>This function will display the array of numbered results and mark the even numbers in BOLD.</p>
+                    <h5>for loop</h5>
+                    <p>This for loop will calculate the length of integers and identify the odd and even numbers based
+                        on the mathematical operator modulus (Is a number divisable by 2).</p>
+                    <h5>Variables and Template Literals</h5>
+                    <p>A className variable is created for odd and even identification. Classes are made in css folder
+                        set to Bold or regular style font. Using Template Literals, the variable templatRows is assigned
+                        to the "results" section of the DOM using --document.getElementById().innerHTML-- </p>
                 </div>
             </div>
 
