@@ -6,6 +6,15 @@
     --white-color: #e5d9b6;
 }
 
+.odd{
+    font-weight: 100;
+}
+
+.even{
+    font-weight: bold;
+    font-size: large;
+}
+
 body{
     color:var(--dark-color); /* var(--***-***); Custom properties that contain specific values to be reused throughout a document. */
 }

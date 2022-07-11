@@ -1,16 +1,26 @@
 //get the values from the Page
 //starts or controller function
-function getValues(){
+function getValues() { 
+
     //get values from the page
     let startValue = document.getElementById("startValue").value;
     let endValue = document.getElementById("endValue").value;
     
-    //we need to call generateNumbers
-    let numbers = generateNumbers(startValue,endValue);{
-        
+    //Note! We need to VALIDATE our inputs (integers or strings)
+    //parse into Integers
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
 
+    if (Number.isInteger(startValue) && Number.isInteger(endValue)){   
+    //we need to call generateNumbers
+    let numbers = generateNumbers(startValue,endValue);
+     //we call displayNumbers
+    displayNumbers(numbers);
+
+    } else{
+        alert("You must enter integers");
     }
-    //we call displayNumbers
+
 }
 
 //generate numbers from startValue to the endValue
@@ -31,6 +41,27 @@ function generateNumbers(sValue,eValue){
 
 //dispay the numbers and mark even numbers bold
 //display or view functions
-function displayNumbers(){
+function displayNumbers(numbers){
+
+let templateRows = "";
+
+for (let index = 0; index < numbers.length; index++) {
+    
+    let className = "even";
+    let number = numbers[index];
+
+    if (number % 2 ==0) {
+        className="even";
+
+    }
+    else{
+        className="odd";
+    }
+
+    templateRows += `<tr><td class="${className}" >${number}</td></tr>`;
+}
+
+    document.getElementById("results").innerHTML = templateRows;
+
 
 }
