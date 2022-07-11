@@ -15,11 +15,11 @@ function getValues(){
 
 //generate numbers from startValue to the endValue
 //logic function(s)
-function gnerateNumbers(sValue,eValue){
+function generateNumbers(sValue,eValue){
 
     let numbers = [];
 
-    //we want to get all numbers from to start to end
+    //we want to get all numbers from start to end
 
     for (let index = sValue; index <= eValue; index++) {    
         //this will execute in a loop until index = eValue
