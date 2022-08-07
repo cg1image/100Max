@@ -12,11 +12,13 @@
 
 .odd{
     font-weight: 100;
+    color: blue;
 }
 
 .even{
     font-weight: bold;
     font-size: large;
+    color: red;
 }
 
 body{

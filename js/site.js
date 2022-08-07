@@ -1,67 +1,60 @@
-//get the values from the Page
+//get the values from the page
 //starts or controller function
-function getValues() { 
-
+function getValues(){
     //get values from the page
     let startValue = document.getElementById("startValue").value;
     let endValue = document.getElementById("endValue").value;
+    startValue=parseInt(startValue);
+    endValue=parseInt(endValue);
     
-    //Note! We need to VALIDATE our inputs (integers or strings)
-    //parse into Integers
-    startValue = parseInt(startValue);
-    endValue = parseInt(endValue);
-
-    if (Number.isInteger(startValue) && Number.isInteger(endValue)){   
-    //we need to call generateNumbers
-    let numbers = generateNumbers(startValue,endValue);
-     //we call displayNumbers
+    if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+        
+        //we call generateNumbers
+    let numbers = generateNumbers(startValue, endValue);
+    //we call displayNumbers and pass in the numbers variable 
     displayNumbers(numbers);
 
-    } else{
-        alert("You must enter integers");
+    } else {
+        alert("Must enter a number");
+        
     }
 
+    
 }
 
-//generate numbers from startValue to the endValue
+//generate numbers from startvalue to the endvalue
 //logic function(s)
-function generateNumbers(sValue,eValue){
+function generateNumbers(sValue, eValue){
 
     let numbers = [];
 
     //we want to get all numbers from start to end
+    for (let index = sValue; index <= eValue; index++){
 
-    for (let index = sValue; index <= eValue; index++) {    
         //this will execute in a loop until index = eValue
         numbers.push(index);
     }
+        return numbers;
+    }
 
-    return numbers;
-}
-
-//dispay the numbers and mark even numbers bold
+//display numbers and mark even numbers bold
 //display or view functions
-function displayNumbers(numbers){
+function displayNumbers(numbers) {
 
-let templateRows = "";
+    let templateRows = "";
 
-for (let index = 0; index < numbers.length; index++) {
-    
-    let className = "even";
-    let number = numbers[index];
-
-    if (number % 2 ==0) {
-        className="even";
-
+    for (let index = 0; index < numbers.length; index++) {
+        
+        let number = numbers[index];
+                //if the remainder is 0 we can assume it's even
+        if (number % 2 == 0) {
+            className = "even";
+        } else {
+            className = "odd";
+        }
+        templateRows += `<tr><td class="${className}">${number}</td></tr>`
     }
-    else{
-        className="odd";
-    }
-
-    templateRows += `<tr><td class="${className}" >${number}</td></tr>`;
-}
 
     document.getElementById("results").innerHTML = templateRows;
-
 
 }
